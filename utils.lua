@@ -81,3 +81,24 @@ function pmutils.table_keyvals(tab)
    end
    return keyset, valset
 end
+
+
+-- Search for an element in a table
+function pmutils.search(element, tab)
+   for _, v in ipairs(tab) do
+      if v == element then
+         return true
+      end
+   end
+   return false
+end
+
+-- Stringifies a vector V, frequently used as a table key
+--[[ USE dump(tab) TO STRINGIFY A TABLE ]]--
+function ptos(x, y, z)
+   return tostring(x) .. ", " .. tostring(y) .. ", " .. tostring(z)
+end
+
+function vtos(v)
+   return tostring(v.x) .. ", " .. tostring(v.y) .. ", " .. tostring(v.z)
+end
